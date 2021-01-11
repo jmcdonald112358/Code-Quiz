@@ -1,6 +1,8 @@
+//Function for generating content on highscores page
 function showScores() {
+
+   //Fetch highscores from local storage
    var scores = JSON.parse(localStorage.getItem("scoreBoard"));
-   console.log(scores);
 
    //Break function early if scoreboard is empty
    if (scores === null) {
@@ -10,7 +12,9 @@ function showScores() {
       returnToQuiz.text("Return to quiz");
       $(".card-body").append(returnToQuiz);
       
+      //Break function
       return;
+
    } else {
       //Clear default/placeholder text
       $(".card-text").empty();
@@ -20,7 +24,7 @@ function showScores() {
          return parseInt(b.Score) - parseInt(a.Score);
       });
 
-      //Generate table of scores
+      //Generate table for scores
       let scoresTable = $("<table>");
       scoresTable.addClass("table");
       $(".card-text").append(scoresTable);
@@ -82,4 +86,5 @@ function showScores() {
    }
 }
 
+//Initiate function
 showScores();

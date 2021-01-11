@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Code Quiz Challenge</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -37,8 +37,6 @@
          </div>
       </nav>
 
-      
-
       <div class="container my-3" id="main">
          <h1>Coding Quiz Challenge</h1>
          <p>
@@ -50,8 +48,6 @@
          <button type="button" name="startQuiz" id="startQuiz" class="btn btn-primary" btn-lg btn-block>Start Quiz!</button>
       </div>
 
-      
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -62,26 +58,3 @@
     <script src = "script.js"></script>
   </body>
 </html>
-
-
-<!-- Psuedo code / outline of what to do
-document.createElement('h1') = question
-document.createElement('button') 
-addEventListener on start button
-   overwrite initial h1 with first question, etc.
-submit/finish button -- can always stay on page; just the questions and answer options refresh with each event -- submit button on last question can trigger stopping timer
-timer count variable should restart each time quiz is started
-
-clearInterval(count/timer) to clear/reset
-
-use local storage to store initials and score, and display somewhere on page -- localStorage.getItem/setItem
-let arrObj = JSON.parse(localStorage.getItem('highscore')) || [];
-localStorage.setItem('highscore', JSON.stringify(arrObj))
-
-let playerScore = {
-   initials: document.getElementById('initials').value,
-   score: count
-}
-arrObj.push(playerScore)
--->
-

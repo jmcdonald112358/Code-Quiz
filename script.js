@@ -1,4 +1,4 @@
-//Variables
+//Global variables
 
    //Questions
    var questions = [
@@ -29,15 +29,12 @@
       },
    ]
 
-var questionIndex = 0;
-var count = questions.length * 15;
-var score = 0;
-var mainEl = $("#main");
-var quizComplete = false;
-//var remainingTimeEl = document.getElementById("timer");
-//var startQuizEl = document.getElementById("startQuiz");
-// var scoreBoard = JSON.parse(localStorage.getItem(highScores)) || [];
-// var scoreBoard = [];
+   //Other necessary global vars
+   var questionIndex = 0;
+   var count = questions.length * 15; //Allow 15 seconds per question
+   var score = 0;
+   var mainEl = $("#main");
+   var quizComplete = false;
 
 
 //Function for timer
@@ -49,7 +46,6 @@ function timeScore() {
       if (count === 0) {
          clearInterval(remainingTime);
       }
-
    }, 1000);
 }
 
@@ -91,7 +87,6 @@ function generateQuestion () {
 
    //Fetch answer options array from within the current questionIndex object and store as a new variable
    let optionsArr = questions[questionIndex].options;
-   console.log(optionsArr); //Remove before submitting
 
    for (let index = 0; index < optionsArr.length; index++) {
       let label = optionsArr[index];
@@ -102,13 +97,12 @@ function generateQuestion () {
       $("#optionsList").append(choice);
    }
 
+   //Define correct answer from corresponding current question
    let correctAns = questions[questionIndex].correctAnswer;
-   console.log("The correct answer is: " + correctAns); //Remove before submitting
 
    //Event listener & function to check selected answer against the correct answer and move to the next question
    $(".list-group-item").click(function(){
    let selected = $(this).text();
-   console.log("The selected answer is: " + selected); //Remove before submitting
 
    //Show next question if selection is correct
    if (selected === correctAns && quizComplete === false) {
@@ -125,7 +119,6 @@ function generateQuestion () {
    else if (selected === correctAns && quizComplete === true) {
       //Store current count as score
       score = count;
-      console.log("Your score is: " + score)
       
       //Run function to show completed page and prompt to save score to scoreboard
       endQuiz();
@@ -138,7 +131,6 @@ function generateQuestion () {
 
       //Store current count as score after penalty is applied
       score = count;
-      console.log("Your score is: " + score)
       
       //Run function to show completed page and prompt to save score to scoreboard
       endQuiz();
@@ -157,11 +149,8 @@ function generateQuestion () {
    //Function for displaying 'quiz complete' and prompt to save score to scoreboard
    function endQuiz() {
 
-      //Hide timer once score is determined
+      //Hide timer once score is determined and stored
       $("#timer").remove();
-      
-      //Push score into local storage !! This should be part of the submit button action
-      localStorage.setItem("highscore", JSON.stringify(score));
       
       //Empty main container
       mainEl.empty();
@@ -189,7 +178,7 @@ function generateQuestion () {
       //Prompt to submit score
       let finalViewText = $("<p>");
       finalViewText.addClass("card-text");
-      finalViewText.text("Add your name to submit your score to the scoreboard!");
+      finalViewText.text("Add your initials to submit your score to the scoreboard!");
       $("#finishMessage").append(finalViewText);
 
       //Form field to input name
@@ -203,7 +192,6 @@ function generateQuestion () {
 
       let formLabel = $("<label>");
       formLabel.attr("for", "inputName").addClass("form-label");
-      // formLabel.text("Your name:");
       $("#formField").append(formLabel);
 
       let formInput = $("<input>");
@@ -231,11 +219,8 @@ function generateQuestion () {
                Name: currentName,
                Score: currentScore
             };
-            console.log(currentUserScore); //Remove before submitting
 
             scoreBoard.push(currentUserScore);
-            console.log(scoreBoard); //Remove before submitting
-
             localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
          }
       })
@@ -245,6 +230,5 @@ function generateQuestion () {
       tryAgain.addClass("btn btn-secondary mx-3").attr("id", "tryAgain").attr("href", "index.html").attr("role", "button");
       tryAgain.text("Start Over");
       $(".card-text").append(tryAgain);
-
    }
 }
