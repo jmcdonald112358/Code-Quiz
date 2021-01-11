@@ -9,17 +9,17 @@ This quiz accomplishes this by giving a set amount of time per question presente
 
 1. Navigate to the quiz
 2. Click to begin quiz
-//image of main page
+![image](https://user-images.githubusercontent.com/73570812/104159221-2ed31d80-53ac-11eb-8c77-492f21540eaa.png)
 3. Answer the questions as they are presented by clicking the choice you determine to be the correct answer
-4. If your selection is correct, the next question will be shown without a score penalty
-5. If your selection is incorrect, a 10 second penalty will be applied, and then the next question will be presented
-6. Once all questions have been answered, your final score is shown and you will have the option to save your score to the scoreboard or try again
-//Image of the submit score page
-7. To see how you compare to your peers, view the scoreboard by clicking to view the highscores in the main header
-//Image of header link
-8. Alternatively, you will automatically be shown the scoreboard upon submitting your score
-9. While viewing the scoreboard, the scores can be cleared to reset the challenge
-//Image of scoreboard and reset scores button
+   1. If your selection is correct, the next question will be shown without a score penalty
+   2. If your selection is incorrect, a 10 second penalty will be applied, and then the next question will be presented
+4. Once all questions have been answered, your final score is shown and you will have the option to save your score to the scoreboard (after inputting your name/initials) or try again
+![image](https://user-images.githubusercontent.com/73570812/104159326-5aee9e80-53ac-11eb-924b-5efdafa8b2f7.png)
+5. To see how you compare to your peers, view the scoreboard by clicking to view the highscores in the main header
+![image](https://user-images.githubusercontent.com/73570812/104159384-70fc5f00-53ac-11eb-9a85-c96d0b90d00d.png)
+6. Alternatively, you will automatically be shown the scoreboard upon submitting your score
+7. While viewing the scoreboard, the scores can be cleared to reset the challenge
+![image](https://user-images.githubusercontent.com/73570812/104159456-92f5e180-53ac-11eb-94ca-786dad27d97f.png)
 
 ## Elements used in this project
 
