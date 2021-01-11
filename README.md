@@ -58,3 +58,5 @@ This quiz accomplishes this by giving a set amount of time per question presente
 
 - There is one outstanding issue I have not been able to resolve, which is reflected in the index.html file at line 33. I cannot seem to get the toggle button to work on small screens for expanding the navbar to show the link to the highscores page. Everything in the code lines up with documentation from getbootstrap.com/docs, but when the toggle button is clicked, nothing happens (not even a console error). 
    - I intend to inquire with a TA resource before or after class on 11-Jan-21 to see if they can assist in figuring out what the issue might be
+- jQuery was used due to TA confirmation that doing so would be okay
+- Bootstrap was used for styling because I'm now familiar with it and why not? I figured if I was going to make a good quiz app, it might as well be pretty without the burden of definiing all of the CSS from scratch too
