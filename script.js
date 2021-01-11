@@ -27,6 +27,11 @@
          options: ["JavaScript", "Terminal", "Console.log", "Arrays"],
          correctAnswer: "Console.log"
       },
+      {
+         question: "What designates an object in JavaScript?",
+         options: ["Parentheses", "Angle brackets", "Curly brackets", "Double square brackets"],
+         correctAnswer: "Curly brackets"
+      }
    ]
 
    //Other necessary global vars
