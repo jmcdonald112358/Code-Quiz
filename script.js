@@ -45,6 +45,12 @@ function timeScore() {
 
       if (count === 0) {
          clearInterval(remainingTime);
+
+         //Restart quiz if time runs out (block ability to store 0 as a score)
+         let timeout = confirm("Oh no! You've run out of time. Please try again.");
+         if (timeout === true ){
+            window.location.href = "index.html";
+         }
       }
    }, 1000);
 }
