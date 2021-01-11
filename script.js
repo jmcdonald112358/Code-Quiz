@@ -37,7 +37,7 @@ var quizComplete = false;
 //var remainingTimeEl = document.getElementById("timer");
 //var startQuizEl = document.getElementById("startQuiz");
 // var scoreBoard = JSON.parse(localStorage.getItem(highScores)) || [];
-var scoreBoard = [];
+// var scoreBoard = [];
 
 
 //Function for timer
@@ -156,9 +156,8 @@ function generateQuestion () {
 
    //Function for displaying 'quiz complete' and prompt to save score to scoreboard
    function endQuiz() {
-      //Stop timer
-      // clearInterval(remainingTime); -- this doesn't work because remainingTime is outside this function. How to do?
-      // $("#timer").text("Score: " + score); -- this doesn't work either; the timer keeps running. Hmm.
+
+      //Hide timer once score is determined
       $("#timer").remove();
       
       //Push score into local storage !! This should be part of the submit button action
@@ -183,13 +182,9 @@ function generateQuestion () {
 
       //Show score
       let yourScore = $("<h3>");
-      yourScore.addClass("card-title").attr("id", "showScore");
+      yourScore.addClass("card-title text-success my-3").attr("id", "showScore");
       yourScore.text("Your score: " + score);
       $("#finishMessage").append(yourScore);
-
-      //Add a line break
-      let lineBreak = $("<br>")
-      $("#showScore").append(lineBreak);
 
       //Prompt to submit score
       let finalViewText = $("<p>");
@@ -208,17 +203,17 @@ function generateQuestion () {
 
       let formLabel = $("<label>");
       formLabel.attr("for", "inputName").addClass("form-label");
-      formLabel.text("Your name:");
+      // formLabel.text("Your name:");
       $("#formField").append(formLabel);
 
       let formInput = $("<input>");
-      formInput.addClass("form-control mx-3").attr("type", "text").attr("placeholder", "Enter your name or initials").attr("id", "enteredName");
+      formInput.addClass("form-control mt-3").attr("type", "text").attr("placeholder", "Enter your initials").attr("id", "enteredName");
       $(".form-label").append(formInput);
 
 
       //Button to submit score
-      let submitButton = $("<button>");
-      submitButton.attr("type", "button").addClass("btn btn-success").attr("id", "submitScore"); //What do I need here to disable the button properly until input is received?
+      let submitButton = $("<a>");
+      submitButton.attr("type", "button").addClass("btn btn-success").attr("id", "submitScore").attr("href", "highscores.html").attr("role", "button");
       submitButton.text("Submit score!");
       $(".card-text").append(submitButton);
 
@@ -231,21 +226,25 @@ function generateQuestion () {
             return false;
          }
          else {
+            var scoreBoard = JSON.parse(localStorage.getItem("scoreBoard")) || [];
             var currentUserScore = {
                Name: currentName,
                Score: currentScore
             };
             console.log(currentUserScore); //Remove before submitting
+
             scoreBoard.push(currentUserScore);
             console.log(scoreBoard); //Remove before submitting
-            localStorage.setItem("scores", scoreBoard);
+
+            localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
          }
       })
       
       //Button to start over
-         //Reload page?
-
-      //Event listener for start over button
+      let tryAgain = $("<a>");
+      tryAgain.addClass("btn btn-secondary mx-3").attr("id", "tryAgain").attr("href", "index.html").attr("role", "button");
+      tryAgain.text("Start Over");
+      $(".card-text").append(tryAgain);
 
    }
 }
