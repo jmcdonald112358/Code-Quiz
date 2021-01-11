@@ -1,7 +1,7 @@
 # Code-Quiz
 This is the Code Quiz project for Homework 4. The project involved creating a functional quiz of web development fundamentals entirely from scratch, utilizing DOM manipulation to change content on the page. 
 
-While progressing through an education in web development, it's important to be quizzed regularly on the fundamentals to ensure that content is drilled in as deep as possible. A quiz game is a perfect tool for this, as it presents the questions and answers in an easy format, and encourages rapid memory recall by adding gamification to the scoring methodology. 
+While progressing through an education in web development, it's important to be quizzed regularly on the fundamentals to ensure that fundamental knowledge is drilled in as deep as possible. A quiz game is a perfect tool for this, as it presents the questions and answers in an easy format, and encourages rapid memory recall by adding gamification to the scoring methodology. 
 
 This quiz accomplishes this by giving a set amount of time per question presented, and penalizing 2/3 of the time per question when the question is answered incorrectly. This encourages the quiz taker to think quickly and accurately. Users are able to save their score to a scoreboard to see how they compare to their peers, and are allowed to retake the quiz as many times as they'd like. 
 
@@ -51,8 +51,8 @@ This quiz accomplishes this by giving a set amount of time per question presente
 
 ## Links
 
-- Project: 
-- Repository: 
+- Project: https://jmcdonald112358.github.io/Code-Quiz/
+- Repository: https://github.com/jmcdonald112358/Code-Quiz
 
 ## Additional notes
 
